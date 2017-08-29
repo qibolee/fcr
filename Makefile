@@ -14,11 +14,28 @@ CXXLNKS=-lpthread \
 		-lrt
 
 # head files
-INCFILES=mlog.h
+INCFILES=mlog.h \
+		 config.h \
+		 config_parser.h \
+		 blocking_queue.h \
+		 accept_thread.h \
+		 process_thread.h \
+		 reload_thread.h \
+		 notice_data.h \
+		 ad_data.h \
+		 string_util.h \
+		 inet_sockets.h
 
 # source files
 SRCFILES=main.cpp \
-		 mlog.cpp
+		 mlog.cpp \
+		 config.cpp \
+		 config_parser.cpp \
+		 accept_thread.cpp \
+		 process_thread.cpp \
+		 reload_thread.cpp \
+		 string_util.cpp \
+		 inet_sockets.cpp
 
 # substr *.h to ./include/*.h
 TMP=$(INCFILES:%.h=$(INC)/%.h)

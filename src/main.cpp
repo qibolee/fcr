@@ -97,10 +97,6 @@ void init_service() {
 void start_service() {
     std::shared_ptr<blocking_queue<int>> queue(new blocking_queue<int>(1024));
 
-//    accept_thread aThreadObj(queue);
-//    process_thread pThreadObj(queue);
-//    reload_thread rThreadObj;
-
     std::thread acceptThread{accept_thread(queue)};
     std::thread reloadThread{reload_thread()};
     std::vector<std::thread> processThreads;
